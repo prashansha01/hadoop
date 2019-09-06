@@ -10,6 +10,7 @@ public class ReducerForViewCount extends Reducer<Text, IntWritable, Text, IntWri
 
     @Override
     public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
+        System.out.println("======================Inside Reducer=================");
         int count = 0;
         for(IntWritable value: values){
             count+= value.get();

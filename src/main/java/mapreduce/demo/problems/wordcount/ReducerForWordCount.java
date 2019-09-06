@@ -9,7 +9,8 @@ import java.io.IOException;
 public class ReducerForWordCount extends Reducer<Text, IntWritable, Text, IntWritable>{
 
 
-    void reduce(Text key, Iterable<IntWritable> counts, Reducer.Context context) throws IOException, InterruptedException {
+    public void reduce(Text key, Iterable<IntWritable> counts, Context context) throws IOException, InterruptedException {
+        System.out.println("======================Inside Reducer=================");
         int total = 0;
         for(IntWritable count: counts){
             total += count.get();
