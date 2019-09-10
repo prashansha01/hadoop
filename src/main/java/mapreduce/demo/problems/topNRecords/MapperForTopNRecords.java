@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class MapperForTopNRecords extends Mapper<LongWritable, Text, Text, LongWritable> {
+public class  MapperForTopNRecords extends Mapper<LongWritable, Text, Text, LongWritable> {
 
     private TreeMap<Long, String> treemap;
     public void setup(Context context){

@@ -5,7 +5,7 @@ import java.util.TreeSet;
 public class TreeMapDemo {
 
     public static void main(String[] args){
-        TreeMap<Integer, String> treemap2 = new TreeMap();
+       /* TreeMap<Integer, String> treemap2 = new TreeMap();
         TreeMap<Integer, String> treemap = new TreeMap<Integer, String>(new CustomComparator());
 
         System.out.println("Comparator for current treemap: "+ treemap.comparator());
@@ -25,7 +25,7 @@ public class TreeMapDemo {
 
         treemap.remove(treemap.firstKey());
         System.out.println("Number Of Entries after removing first key : " +treemap.size());
-        System.out.println(treemap.toString());
+        System.out.println(treemap.toString());*/
 
   /*      TreeSet<Integer> treeset = new TreeSet<Integer>();
         treeset.add(32);
@@ -38,7 +38,7 @@ public class TreeMapDemo {
         System.out.println("Number Of Entries : " +treeset.size());
         System.out.println(treeset.toString());*/
 
-        /*PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
         pq.add(32);
         pq.add(51);
         pq.add(2);
@@ -47,7 +47,19 @@ public class TreeMapDemo {
         pq.add(76);
         pq.add(17);
         System.out.println("Number Of Entries : " +pq.size());
-        System.out.println(pq.toString());*/
+        System.out.println(pq.toString());
+        System.out.println("Peek: " + pq.peek());
+        System.out.println("After Peek : "+pq.toString());
+
+        System.out.println("Poll: " + pq.poll());
+        System.out.println("After Poll : "+pq.toString());
+
+        pq.remove(pq.peek());
+
+        System.out.println("After rmove peek : "+pq.toString());
+
+
+
 
     }
 }

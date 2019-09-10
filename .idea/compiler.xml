@@ -9,5 +9,8 @@
         <module name="hadoop-mapreduce" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="hadoop-mapreduce" target="6" />
+    </bytecodeTargetLevel>
   </component>
 </project>
