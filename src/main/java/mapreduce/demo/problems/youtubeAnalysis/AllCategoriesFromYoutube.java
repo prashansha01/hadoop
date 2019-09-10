@@ -5,6 +5,7 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
@@ -20,17 +21,20 @@ public class AllCategoriesFromYoutube extends Configured implements Tool {
 
         Configuration conf = this.getConf();
         Job job = Job.getInstance(conf);
-
-        job.setJobName("All categories from Youtube data");
+        // uncomment this for all categories
+        //job.setJobName("All categories from Youtube data");
+        job.setJobName("Top n categories from Youtube data");
         job.setJarByClass(AllCategoriesFromYoutube.class);
 
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(NullWritable.class);
+        job.setOutputValueClass(LongWritable.class);
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(IntWritable.class);
 
         job.setMapperClass(MapperForAllCategoriesFromYoutube.class);
-        job.setReducerClass(ReducerForAllCategoriesFromYoutube.class);
+        // uncomment this for all categories
+         //job.setReducerClass(ReducerForAllCategoriesFromYoutube.class);
+        job.setReducerClass(ReducerForTop5Category.class);
 
         Path inputPath = new Path(strings[0]);
         Path outputPath = new Path(strings[1]);
