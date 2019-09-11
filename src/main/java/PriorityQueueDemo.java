@@ -2,22 +2,19 @@ import mapreduce.demo.problems.youtubeAnalysis.Category;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class PriorityQueueDemo {
 
-    private Category cat1 = new Category(new LongWritable(1l), new Text("One"));
+
 
     public static void main(String[] args){
-        Category cat1 = new Category(new LongWritable(10l), new Text("Ten"));
-        Category cat2 = new Category(new LongWritable(2l), new Text("Three"));
-        Category cat3 = new Category(new LongWritable(8l), new Text("Eight"));
-        Category cat4 = new Category(new LongWritable(7l), new Text("Seven"));
-        Category cat5 = new Category(new LongWritable(4l), new Text("Four"));
-        Category cat6 = new Category(new LongWritable(11l), new Text("Eleven"));
+        Category cat1 = new Category(10l, "Ten");
+        Category cat2 = new Category(2l, "Three");
+        Category cat3 = new Category( 8l, "Eight");
+        Category cat4 = new Category( 7l, "Seven");
+        Category cat5 = new Category( 4l,  "Four");
+        Category cat6 = new Category( 11l,  "Eleven");
         List<Category> list = new ArrayList<Category>();
         list.add(cat1);list.add(cat2);
         list.add(cat3);list.add(cat4);
@@ -42,6 +39,7 @@ public class PriorityQueueDemo {
         System.out.println(list.toString());
         System.out.println("Top 3 elemenets :");
         System.out.println(pq.toString());
+
 
     }
 }
